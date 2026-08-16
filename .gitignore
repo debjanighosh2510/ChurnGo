@@ -1,0 +1,31 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environments
+venv/
+env/
+.venv/
+
+# Streamlit secrets (never commit these!)
+.streamlit/secrets.toml
+
+# Environment files
+.env
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Large data files (optional - comment out if you need them in repo)
+# churn-dataset.csv
+# telco_churn_clean.csv
+# shap_values.csv
