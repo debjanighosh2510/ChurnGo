@@ -115,8 +115,8 @@ st.markdown("""
         margin-bottom: 0px;
         letter-spacing: -0.5px;
     }
-    .brand-title .brand-name {
-        color: #4ADE80;
+    .brand-title .brand-name, .brand-name {
+        color: #22C55E !important;
     }
     .brand-subtitle {
         font-size: 0.95rem;
@@ -332,7 +332,7 @@ def generate_retention_recommendations(raw_dict, proba):
 top_col1, top_col2, top_col3 = st.columns([0.55, 0.25, 0.20])
 
 with top_col1:
-    st.markdown('<div class="brand-title">🛡️ <span class="brand-name">ChurnGo</span></div>', unsafe_allow_html=True)
+    st.markdown('<div class="brand-title">🛡️ <span class="brand-name" style="color: #22C55E; font-weight: 800;">ChurnGo</span></div>', unsafe_allow_html=True)
     st.markdown('<div class="brand-subtitle">Enterprise Customer Churn Prevention & Retention Platform</div>', unsafe_allow_html=True)
 
 with top_col2:
@@ -340,7 +340,7 @@ with top_col2:
         st.markdown(f'<div style="text-align: right; margin-top: 10px;"><span class="user-badge-pro">👑 PRO PLAN (Unlimited)</span></div>', unsafe_allow_html=True)
     else:
         used = st.session_state.prediction_count
-        st.markdown(f'<div style="text-align: right; margin-top: 10px;"><span class="user-badge-free">⚡ FREE PLAN ({used}/50 used)</span></div>', unsafe_allow_html=True)
+        st.markdown(f'<div style="text-align: right; margin-top: 10px;"><span class="user-badge-free">⚡ FREE PLAN ({used}/200 used)</span></div>', unsafe_allow_html=True)
 
 with top_col3:
     st.markdown('<div style="text-align: right; margin-top: 5px;">', unsafe_allow_html=True)
