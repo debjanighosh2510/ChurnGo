@@ -434,11 +434,11 @@ with tab_csv:
                 st.session_state.show_login_dialog = True
                 st.rerun()
         
-        # Rule 2: Freemium Limit Check (>50 customers/month on Free Plan)
-        elif st.session_state.user_plan == "Free Plan" and (st.session_state.prediction_count + batch_size) > 50:
+        # Rule 2: Freemium Limit Check (>200 customers/month on Free Plan)
+        elif st.session_state.user_plan == "Free Plan" and (st.session_state.prediction_count + batch_size) > 200:
             st.error(
                 f"⚠️ **Free Plan Limit Exceeded**: Uploaded CSV contains **{batch_size} customers** "
-                f"(Your usage: {st.session_state.prediction_count}/50). The Free Plan supports up to 50 customer predictions per month."
+                f"(Your usage: {st.session_state.prediction_count}/200). The Free Plan supports up to 200 customer predictions per month."
             )
             st.info("💡 Upgrade to **Pro Plan (₹3,000 / month)** for unlimited customer predictions and batch CSV reports.")
             
@@ -606,8 +606,8 @@ with tab_single:
         if st.button("🔐 Login Now", key="single_login_req_btn"):
             st.session_state.show_login_dialog = True
             st.rerun()
-    elif st.session_state.user_plan == "Free Plan" and st.session_state.prediction_count >= 50:
-        st.error("⚠️ **Free Plan Limit Reached (50/50 predictions)**. Upgrade to Pro Plan (₹3,000/month) for unlimited predictions.")
+    elif st.session_state.user_plan == "Free Plan" and st.session_state.prediction_count >= 200:
+        st.error("⚠️ **Free Plan Limit Reached (200/200 predictions)**. Upgrade to Pro Plan (₹3,000/month) for unlimited predictions.")
         if st.button("💳 Upgrade to Pro via Razorpay (₹3,000/mo)", key="upgrade_from_single"):
             st.session_state.show_razorpay_modal = True
             st.rerun()
@@ -811,8 +811,8 @@ with tab_pricing:
             <p>Ideal for exploring and testing small customer samples.</p>
             <hr>
             <ul style="text-align: left; line-height: 2.0; padding-left: 20px;">
-                <td>✅ <b>50 Customer Predictions</b> per month</td><br>
-                <td>✅ Batch CSV Upload (up to 50 rows)</td><br>
+                <td>✅ <b>200 Customer Predictions</b> per month</td><br>
+                <td>✅ Batch CSV Upload (up to 200 rows)</td><br>
                 <td>✅ Single Customer On-Demand Predictor</td><br>
                 <td>✅ Basic SHAP Feature Attribution</td><br>
             </ul>
