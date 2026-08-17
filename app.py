@@ -115,6 +115,9 @@ st.markdown("""
         margin-bottom: 0px;
         letter-spacing: -0.5px;
     }
+    .brand-title .brand-name {
+        color: #4ADE80;
+    }
     .brand-subtitle {
         font-size: 0.95rem;
         color: #64748B;
@@ -329,7 +332,7 @@ def generate_retention_recommendations(raw_dict, proba):
 top_col1, top_col2, top_col3 = st.columns([0.55, 0.25, 0.20])
 
 with top_col1:
-    st.markdown('<div class="brand-title">🛡️ ChurnGo</div>', unsafe_allow_html=True)
+    st.markdown('<div class="brand-title">🛡️ <span class="brand-name">ChurnGo</span></div>', unsafe_allow_html=True)
     st.markdown('<div class="brand-subtitle">Enterprise Customer Churn Prevention & Retention Platform</div>', unsafe_allow_html=True)
 
 with top_col2:
